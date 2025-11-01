@@ -12,9 +12,9 @@
 }
 
 :root {
-    --bg-color: #191f36;
-    --snd-bg-color: #262B40;
-    --text-color: #fff;
+    --bg-color: #fff;
+    --snd-bg-color: #ecebeb;
+    --text-color: #000000;
     --main-color: #59B2F4;
 }
 
@@ -35,8 +35,46 @@ section {
 
 
 
-/*-----Header section-----*/
+/* Theme overrides and transitions */
+/* Smoothly animate color/background changes when switching theme */
+html, body {
+    transition: background-color .1s ease, color .1s ease;
+}
 
+/* Dark theme: set on <body class="dark"> */
+
+body.dark {
+    --bg-color: #0b1220;
+    --snd-bg-color: #071016;
+    --text-color: #e6eef7;
+    --main-color: #59B2F4;
+}
+/* -----------------------------------*/
+
+
+
+
+
+/* -----Theme toggle button -----*/
+.theme-toggle {
+    background: transparent;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    padding: .4rem .6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease;
+    margin-left: 1rem;
+}
+/* -----------------------------------*/
+
+
+
+
+
+/*-----Header section-----*/
 .header {
     position: fixed;
     top: 0;
@@ -52,7 +90,7 @@ section {
 
 .logo {
     font-size: 2.5rem;
-    color: var(--text-color);
+    color: var(--main-color);
     font-weight: 700;
     cursor: default;
 }
@@ -110,11 +148,29 @@ section {
     display: none;
     cursor: pointer;
 }
+/* -----------------------------------*/
+
+
+
+
+
+/* Align theme toggle near the navbar on wide screens */
+.header > .theme-toggle {
+    /* push the toggle to the right side so it's visually adjacent to the navbar */
+    margin-left: auto;
+}
+
+.header .navbar {
+    /* small gap between toggle and navbar */
+    margin-left: .8rem;
+}
+/* -----------------------------------*/
+
+
 
 
 
 /*-----Home section-----*/
-
 .home {
     display: flex;
     justify-content: center;
@@ -141,8 +197,17 @@ span {
 }
 
 .home-img {
-    width: 25vw;
-    animation: floatImage 4s ease-in-out infinite;
+    padding-left: 5%;
+    width: 35vw;
+    height: 35vw;
+    animation: floatImage 10s ease-in-out infinite;
+}
+
+.hero-image {
+    width: 35vw;
+    height: 35vw;
+    border-radius: 50%;
+    border: 0.5rem solid var(--main-color);
 }
 
 @keyframes floatImage {
@@ -158,7 +223,8 @@ span {
 }
 
 .home-content p {
-    font-size: 1.6rem;
+    font-size: 1.9rem;
+    line-height: 1.5;
 }
 
 .social-media a {
@@ -198,21 +264,21 @@ span {
 .btn:hover {
     box-shadow: none;
 }
+/* -----------------------------------*/
+
+
 
 
 
 /*-----About section-----*/
-
+/* About section: use a centered block layout to match other sections */
 .about {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    background: var(--snd-bg-color);
+    background: var(--bg-color);
+    text-align: center;
 }
 
-.about-img img {
-    width: 35vw;
+.about h2 {
+    margin-bottom: 5rem;
 }
 
 .heading {
@@ -220,24 +286,24 @@ span {
     font-size: 4.5rem;
 }
 
-.about-content h2 {
-    text-align: left;
-    line-height: 1.2;
-}
-
-.about-content h3 {
-    font-size: 2.6rem;
+.about-content {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .about-content p {
-    font-size: 1.6rem;
-    margin: 2rem 0 3rem;
+    font-size: 1.9rem;
+    margin: 1rem auto 3rem;
+    line-height: 1.5;
 }
+/* -----------------------------------*/
+
+
 
 
 
 /*-----Services section-----*/
-
 .services h2 {
     margin-bottom: 5rem;
 }
@@ -252,11 +318,11 @@ span {
 
 .services-container .services-box {
     flex: 1 1 30rem;
-    background: var(--snd-bg-color);
+    background: var(--bg-color);
     padding: 3rem 2rem 4rem;
     border-radius: 2rem;
     text-align: center;
-    border: .2rem solid var(--bg-color);
+    border: .2rem solid var(--main-color);
     transition: .5s ease;
 }
 
@@ -275,21 +341,27 @@ span {
 }
 
 .services-box p {
-    font-size: 1.6rem;
+    font-size: 1.9rem;
     margin: 1rem 0 3rem;
 }
+/* -----------------------------------*/
+
 
 
 
 
 /*-----Portfolio section-----*/
-
 .portfolio {
-    background: var(--snd-bg-color);
+    background: var(--bg-color);
 }
 
 .portfolio h2 {
     margin-bottom: 4rem;
+}
+
+.portfolio h4 {
+    /* Ensure project titles are visible on top of image overlays in both light and dark themes */
+    color: #fff;
 }
 
 .portfolio-container {
@@ -302,7 +374,7 @@ span {
 .portfolio-container .portfolio-box {
     position: relative;
     border-radius: 2rem;
-    box-shadow: 0 0 1rem var(--bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
     overflow: hidden;
     display: flex;
 }
@@ -310,7 +382,7 @@ span {
 .portfolio-box img {
     width: 100%;
     transition: .5s ease;
-    opacity: 0.7;
+    opacity: 1;
 }
 
 .portfolio-box:hover img {
@@ -330,7 +402,7 @@ span {
     text-align: center;
     padding: 0 4rem;
     transform: translateY(100%);
-    transition: .5s ease;
+    transition: .2s ease;
 }
 
 .portfolio-box:hover .portfolio-layer {
@@ -339,10 +411,11 @@ span {
 
 .portfolio-layer h4 {
     font-size: 3rem;
+    color: #fff; /* explicit white so it stays readable in dark mode */
 }
 
 .portfolio-layer p {
-    font-size: 1.6rem;
+    font-size: 1.9rem;
     margin: .3rem 0 1rem;
 }
 
@@ -352,20 +425,16 @@ span {
     align-items: center;
     width: 5rem;
     height: 5rem;
-    background: var(--text-color);
+    background: var(--main-color);
     border-radius: 50%;
 }
+/* -----------------------------------*/
 
-.portfolio-layer a i {
-    font-size: 2rem;
-    color: var(--snd-bg-color);
-}
 
 
 
 
 /*-----Contact section-----*/
-
 .contact h2 {
     margin-bottom: 3rem;
 }
@@ -406,15 +475,19 @@ span {
     margin-top: 2rem;
     cursor: pointer;
 }
+/* -----------------------------------*/
+
+
+
+
 
 /*-----Footer section-----*/
-
 .footer {
    display: flex;
    justify-content: center;
    align-items: center;
    flex-wrap: wrap;
-   padding: 2rem 9%;
+   padding: 1.6rem 9%;
    background: var(--snd-bg-color);
 }
 
@@ -426,11 +499,11 @@ span {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    font-size: 3.6rem;
-    color: var(--text-color);
+    font-size: 2.6rem;
+    color: var(--main-color);
     background: var(--main-color);
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -461,12 +534,19 @@ span {
     box-shadow: none;
     outline: none;
 }
+/* -----------------------------------*/
+
+
+
+
 
 /*-----Responsive Media Queries-----*/
-
 @media (max-width: 768px) {
   .header{padding:1.2rem 5%;flex-direction:column;align-items:flex-start;gap:.8rem}
   .logo{font-size:2rem}
+
+    /* on smaller screens header becomes column — don't push the toggle with auto margin */
+    .header > .theme-toggle { margin-left: 0; }
   
   .navbar {
         position: absolute;
@@ -506,17 +586,34 @@ span {
   #menu-icon{display:block;position:absolute;right:5%;top:1.2rem;z-index:110}
   section{padding:8rem 6% 2rem}
   .home{flex-direction:column;gap:2rem}
+  
+  /* Place hero image above the text on mobile by changing order */
+  .home-img{order:-1}
   .home-content h1{font-size:4.2rem}
   .home-content h3{font-size:2.6rem}
   .home-img{width:45vw}
-  .about{flex-direction:column;gap:1.5rem}
+
+  /* About: on mobile keep block stacking and add side padding for readability */
+  .about{padding:0 2rem}
   .about-img img{width:70vw}
   .services-container{flex-direction:column}
   .services-container .services-box{flex:1 1 100%}
   .portfolio-container{grid-template-columns:repeat(2,1fr)}
   .portfolio-box img{opacity:1}
   .contact form .input-box input{width:100%}
-  .footer-iconTop{right:1.2rem;bottom:1.2rem;width:4.4rem;height:4.4rem;font-size:3rem}
+  .footer-iconTop{right:1.2rem;bottom:1.2rem;width:3.4rem;height:3.4rem;font-size:2.6rem}
+
+  /* Place theme toggle near the menu icon on mobile (left of the menu button) */
+  .header > .theme-toggle {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+
+  /* place slightly left of the menu icon which is at right:5% */
+    right: calc(5% + 3.6rem);
+    z-index: 111;
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 480px) {
@@ -531,3 +628,4 @@ span {
   .services-box i{font-size:5.6rem}
   .footer-iconTop{width:4rem;height:4rem;font-size:2.6rem}
 }
+/* -----------------------------------*/
