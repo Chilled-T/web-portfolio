@@ -17,7 +17,7 @@ document.querySelectorAll('.navbar a').forEach(link => {
 /*-----Typed JS function-----*/
 
 const typed = new Typed('.home-content span', {
-    strings: ['Web Developer', 'App Developer', 'Coder', 'Programmer', 'Innovator', 'Entrepreneur','Software Engineer'],
+    strings: ['Web Developer', 'App Developer', 'Coder', 'Innovator', 'Entrepreneur','Software Engineer', 'Game Developer'],
     typeSpeed: 100,
     backSpeed: 50,
     backDelay: 1000,
