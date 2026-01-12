@@ -17,6 +17,15 @@
 
     <!--Favicon-->
     <link rel="icon" type="image/png" href="/images/t-favicon.png">
+
+    <!--EmailJS SDK-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("hGbjzA5_lxOE19vrY"); // Replace with your actual Public Key
+        })();
+    </script>
 </head>
 
 <body>
@@ -33,6 +42,7 @@
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
+            <a href="#skills">Skills</a>
             <a href="#services">Services</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#contact">Contact</a>
@@ -60,7 +70,7 @@
         </div>
 
         <div class="home-img">
-            <img src="images/hero-img.JPG" alt="hero-image" class="hero-image">
+            <img src="/images/hero-img.jpg" alt="hero-image" class="hero-image">
         </div>
     </section>
 
@@ -83,8 +93,42 @@
             My favorite movie is <em>The Matrix</em>, which resonates with me because of its themes of self-discovery and 
             breaking boundaries — much like my path into tech. And when I’m not coding, I’m usually vibing to trapsoul and 
             R&B, music that helps me stay calm, grounded, and creatively inspired.</br>
-</p>
-            <a href="#" class="btn">Read more</a>
+            </p>
+        </div>
+    </section>
+
+    <!--Skills section design-->
+    <section class="skills" id="skills">
+        <h2 class="heading">My <span>Skills</span></h2>
+
+        <div class="skills-container">
+            
+            <div class="skills-left">
+                <h3>Technical Skills</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React JavaScript</span>
+                    <span class="skill-tag">Node.JS</span>
+                    <span class="skill-tag">Express.JS</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">RestAPI</span>
+                    <span class="skill-tag">Git & Github</span>
+                </div>
+            </div>
+
+            <div class="skills-right">
+                <h3>Certifications</h3>
+                <div class="cert-box">
+                    <img src="/images/udemy-logo.png" alt="Udemy Logo" class="cert-icon">
+                    <h4>Full Stack Web Development</h4>
+                    <p>Udemy Professional Certificate</p>
+                    <a href="https://www.udemy.com/certificate/UC-175ca093-1615-4162-980f-a561055af4b2/" target="_blank" class="btn">View Certificate</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -98,7 +142,6 @@
                 <h3>Web Development</h3>
                 <p>I’m a passionate web developer who loves transforming ideas into interactive, user-friendly digital experiences. 
                 My focus is on building responsive, efficient, and visually appealing websites that bring real value to users.</p>
-                <a href="" class="btn">Read more</a>
             </div>
 
             <div class="services-box">
@@ -107,7 +150,6 @@
                 <p>I’m an enthusiastic app developer dedicated to creating seamless, intuitive, and impactful mobile applications. 
                     I enjoy turning innovative ideas into functional tools that enhance everyday life. 
                     From concept to deployment, I focus on performance, design, and user experience.</p>
-                <a href="" class="btn">Read more</a>
             </div>
 
             <div class="services-box">
@@ -115,7 +157,6 @@
                 <h3>Mobile Responsiveness</h3>
                 <p>I specialize in transforming outdated websites into fully responsive, modern platforms that look and perform beautifully on any device. 
                 By enhancing layouts, optimizing performance, and improving user interfaces, I bring old designs up to today’s mobile standards.</p>
-                <a href="" class="btn">Read more</a>
             </div>
 
         </div>
@@ -126,65 +167,63 @@
         <h2 class="heading">Latest <span>Projects</span></h2>
 
         <div class="portfolio-container">
-            <div class="portfolio-box">
-                <img src="images/1.JPG" alt="">
+            <a href="https://cremtec.co.za/" target="_blank" class="portfolio-box">
+                <img src="/images/cremtec.png" alt="Cremtec">
                 <div class="portfolio-layer">
-                    <h4>Project 1</h4>
                 </div>
-            </div>
+            </a>
             
-            <div class="portfolio-box">
-                <img src="images/2.JPG" alt="">
+            <a href="https://chilled-t.github.io/qr-code-app/" target="_blank" class="portfolio-box">
+                <img src="/images/qr code app.png" alt="QR Code App">
                 <div class="portfolio-layer">
-                    <h4>Project 2</h4>
+                    <h4>QR Code App</h4>
                 </div>
-            </div>
+            </a>
 
-            <div class="portfolio-box">
-                <img src="images/3.JPG" alt="">
+            <a href="https://chilled-t.github.io/internet-speet-test-app/" target="_blank" class="portfolio-box">
+                <img src="/images/internet speed test.png" alt="Speed Test">
                 <div class="portfolio-layer">
-                    <h4>Project 3</h4>
+                    <h4>Internet Speed Test</h4>
                 </div>
-            </div>
+            </a>
 
-            <div class="portfolio-box">
-                <img src="images/4.JPG" alt="">
+            <a href="https://chilled-t.github.io/shares-calculator/" target="_blank" class="portfolio-box">
+                <img src="/images/shares calculator.png" alt="Shares Calculator">
                 <div class="portfolio-layer">
-                    <h4>Project 4</h4>
+                    <h4>Shares Calculator</h4>
                 </div>    
-            </div>
+            </a>
 
-            <div class="portfolio-box">
-                <img src="images/5.JPG" alt="">
+            <a href="https://chilled-t.github.io/memory-game/" target="_blank" class="portfolio-box">
+                <img src="/images/memory game.png" alt="Memory Game">
                 <div class="portfolio-layer">
-                    <h4>Project 5</h4>
+                    <h4>Memory Game</h4>
                 </div>
-            </div>
-
+            </a>
+    
             <div class="portfolio-box">
-                <img src="images/6.JPG" alt="">
+                <img src="/images/6.jpg" alt="Pending Project">
                 <div class="portfolio-layer">
                     <h4>Project 6</h4>
+                    <p>Coming Soon</p>
                 </div>    
             </div>
-        </div>
+        </div> 
     </section>
 
     <!--Contact section design-->
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me</span></h2>
-        
-        <form action="#">
+        <form id="contact-form">
             <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email Address">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email Address" required>
             </div>
-
             <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
-                <input type="text" placeholder="Email Subject">
+                <input type="number" id="mobile" placeholder="Mobile Number">
+                <input type="text" id="email_subject" placeholder="Email Subject">
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
             <input type="submit" value="Send Message" class="btn">
         </form>
     </section>
@@ -203,5 +242,4 @@
     <!--Main JS-->
     <script src="main.js"></script>
 </body>
-
 </html>
