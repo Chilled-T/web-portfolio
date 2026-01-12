@@ -14,6 +14,26 @@ document.querySelectorAll('.navbar a').forEach(link => {
     });
 });
 
+/*-----Scroll Section Active Link-----*/
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.navbar a');
+
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 150; // Adjusts when the underline switches
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if(top >= offset && top < offset + height) {
+            navLinks.forEach(links => {
+                links.classList.remove('active');
+                document.querySelector('.navbar a[href*=' + id + ']').classList.add('active');
+            });
+        }
+    });
+};
+
 /*-----Typed JS function-----*/
 
 const typed = new Typed('.home-content span', {
@@ -70,3 +90,45 @@ const typed = new Typed('.home-content span', {
     }
 })();
 
+/*-----EmailJS Initialization-----*/
+        (function(){
+            emailjs.init("hGbjzA5_lxOE19vrY"); // Replace with your actual Public Key
+        })();
+
+/*-----Contact Form EmailJS-----*/
+const contactForm = document.getElementById('contact-form');
+const fullName = document.getElementById('name');
+const emailAddress = document.getElementById('email');
+const mobileNumber = document.getElementById('mobile');
+const emailSubject = document.getElementById('email_subject');
+const message = document.getElementById('message');
+
+function sendEmail(e) {
+    e.preventDefault(); // Prevents the page from reloading
+
+    // Define the template parameters matching your EmailJS template variables
+    const templateParams = {
+        from_name: fullName.value,
+        from_email: emailAddress.value,
+        mobile: mobileNumber.value,
+        subject: emailSubject.value,
+        message: message.value
+    };
+
+    // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with actual values
+    emailjs.send('service_8biammd', 'template_fcsbgt5', templateParams)
+        .then(() => {
+            // Success Message
+            alert('Message Sent Successfully!');
+            
+            // Clear the form
+            contactForm.reset();
+        }, (error) => {
+            // Error Message
+            console.log('FAILED...', error);
+            alert('Something went wrong. Please try again.');
+        });
+}
+
+// Attach the event listener
+contactForm.addEventListener('submit', sendEmail);
