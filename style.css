@@ -302,6 +302,121 @@ span {
 
 
 
+/*-----Skills Section-----*/
+.skills {
+    background: var(--bg-color);
+}
+
+.skills h2 {
+    margin-bottom: 5rem;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+/* Left Side (Skills) */
+.skills-left {
+    flex: 1 1 40rem;
+}
+
+.skills-left h3 {
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.skill-tag {
+    font-size: 1.7rem;
+    padding: 1rem 2rem;
+    background: var(--bg-color);
+    border: .2rem solid var(--main-color);
+    border-radius: 5rem;
+    font-weight: 600;
+    transition: .3s ease;
+    cursor: default;
+}
+
+.skill-tag:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+    transform: translateY(-3px);
+}
+
+/* Right Side (Certifications) */
+.skills-right {
+    flex: 1 1 40rem;
+    text-align: center;
+}
+
+.skills-right h3 {
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+}
+
+.cert-box {
+    background: var(--bg-color);
+    padding: 3rem 2rem;
+    border-radius: 2rem;
+    border: .2rem solid var(--main-color);
+    transition: .5s ease;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.1);
+}
+
+.cert-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 2rem var(--main-color);
+}
+
+.cert-box i {
+    font-size: 5rem;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+}
+
+.cert-box h4 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.cert-box p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.cert-icon {
+    width: 8rem; /* Controls the size of the Udemy logo */
+    height: auto;
+    margin-bottom: 1.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Mobile Responsive adjustment for Skills */
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+    }
+}
+/* -----------------------------------*/
+
+
+
 
 /*-----Services section-----*/
 .services h2 {
@@ -381,6 +496,8 @@ span {
 
 .portfolio-box img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: .5s ease;
     opacity: 1;
 }
@@ -417,6 +534,8 @@ span {
 .portfolio-layer p {
     font-size: 1.9rem;
     margin: .3rem 0 1rem;
+    color: #fff; /* explicit white so it stays readable in dark mode */
+    opacity: 0.8;
 }
 
 .portfolio-layer a {
@@ -427,6 +546,20 @@ span {
     height: 5rem;
     background: var(--main-color);
     border-radius: 50%;
+}
+
+/* Ensure the anchor tag behaves like the box container */
+a.portfolio-box {
+    display: flex; /* Maintains the flex layout of the original box */
+    cursor: pointer;
+    color: inherit; /* Prevents text from turning blue */
+}
+
+/* Ensure images stay contained within the anchor */
+a.portfolio-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 /* -----------------------------------*/
 
