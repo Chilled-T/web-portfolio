@@ -373,6 +373,7 @@ span {
     border: .1rem solid var(--main-color);
     transition: .5s ease;
     box-shadow: 0 0 1rem rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
 }
 
 .cert-box:hover {
